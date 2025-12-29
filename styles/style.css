@@ -1,0 +1,968 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  /* stops white right-side space */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0.5em;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #00274c;
+  border-bottom: #ffcb05 5px solid;
+  border-top: black 5px solid;
+  border-left: #ffcb05 5px solid;
+  border-right: #ffcb05 5px solid;
+  padding: 10px 20px;
+}
+
+header #logo {
+  float: left;
+  margin-right: 15px;
+}
+
+header #branding {
+  float: left;
+}
+
+header #branding h1 {
+  margin: 0;
+  font-size: 30px;
+  color: #ffcb05;
+}
+
+header #branding h3 {
+  color: white;
+  margin: 0;
+  font-size: 16px;
+}
+
+header a:hover {
+  color: white;
+  font-weight: bold;
+}
+
+header a {
+  color: #ffcb05;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 16px;
+  float: none;
+}
+
+.topmenu {
+  display: flex;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  /* stay vertical */
+  align-items: flex-start;
+  /* push menu to the RIGHT */
+  gap: 18px;
+  /* reduce spacing between items */
+  list-style: none;
+  margin: 0;
+  padding: 10px 30px 0 0;
+  /* right padding to push further right */
+}
+
+.menu li {
+  position: relative;
+  /* underline will stay under each item */
+}
+
+.menu a {
+  display: block;
+  padding-bottom: 5px;
+  /* space for underline */
+  color: #ffcb05;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.menu a:hover {
+  color: #fff;
+  font-weight: bold;
+}
+
+.menu a:hover::after {
+  transform: scaleX(1);
+}
+
+.menu a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  /* Adjust this to position the underline */
+  width: 100%;
+  height: 2px;
+  /* This is the thickness of the underline */
+  background-color: yellow;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+main {
+  display: flex;
+
+}
+
+section {
+  flex-basis: 100%;
+  min-height: 90vh;
+  background-color: whitesmoke;
+  padding-bottom: 30px;
+
+}
+
+#new {
+  flex-basis: 100%;
+  padding: 20px;
+  min-height: 60vh;
+  background-color: whitesmoke;
+}
+
+/* FULL-WIDTH SLIDESHOW */
+.slideshow {
+  width: 100vw;
+  /* full viewport width */
+  height: 750px;
+  /* adjust this height as you want */
+  overflow: hidden;
+  position: relative;
+  left: 50%;
+  /* trick to break out of parent container */
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  /* full bleed */
+}
+
+/* Each slide fills the container */
+.slide {
+  display: none;
+  /* JS will turn this to block */
+  position: absolute;
+  inset: 0;
+  /* top:0; right:0; bottom:0; left:0 */
+}
+
+/* Image stretches nicely inside */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  /* ensures full coverage without distortion */
+}
+
+.caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  /* or whatever color you prefer */
+  background: rgba(0, 0, 0, 0.5);
+  /* optional background for readability */
+  padding: 22px;
+  height: 200px;
+  width: 97%;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 13px;
+  margin-bottom: -19px;
+
+}
+
+/* Caption typography + link styling (matches your navy/gold theme) */
+.cap-title {
+  color: #ffcb05;
+  /* your gold */
+  font-size: 22px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.cap-text {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.cap-note {
+  color: brown;
+  font-size: 17px;
+  font-weight: 700;
+  opacity: 0.95;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+/* Attractive clickable link button inside the caption */
+.caption .cap-link {
+  display: inline-block;
+  margin-top: 6px;
+  background: #ffcb05;
+  /* gold */
+  color: #00274c;
+  /* navy */
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 16px;
+  border: 2px solid #ffcb05;
+  transition: all 0.25s ease;
+}
+
+.caption .cap-link:hover {
+  background: transparent;
+  color: #ffcb05;
+  border: 2px solid #ffcb05;
+}
+
+/* ARROWS */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 60px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  padding: 10px 20px;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 8px;
+  user-select: none;
+  transition: background 0.3s;
+}
+
+.arrow:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.arrow-left {
+  left: 20px;
+  top: 250px;
+}
+
+.arrow-right {
+  right: 20px;
+  top: 250px;
+}
+
+/* PAUSE BUTTON */
+.pause-btn {
+  position: absolute;
+  top: 230px;
+  /* moves to arrow down */
+  left: 50%;
+  /* positions at the center */
+  transform: translateX(-50%);
+  /* PERFECT center alignment */
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 30px;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 15;
+  /* above arrows */
+}
+
+.pause-btn:hover {
+  background: rgba(0, 0, 0, 0.9);
+}
+
+/* Hide arrows & button by default */
+.arrow,
+.pause-btn {
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+/* Show on hover */
+.slideshow:hover .arrow,
+.slideshow:hover .pause-btn {
+  opacity: 1;
+}
+
+.container {
+  width: 88%;
+  margin: auto;
+  overflow: hidden;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#newsletter {
+  padding-top: 30px;
+  padding: 15px;
+  color: black;
+  background: #ffcb05;
+}
+
+#newsletter h1 {
+  color: white;
+}
+
+
+/* =========================
+   Skills / Cert / References
+   ========================= */
+
+.profile-sections {
+  max-width: 980px;
+  margin: 30px auto 10px;
+  padding: 0 18px;
+}
+
+.section-heading {
+  margin: 35px 0 14px;
+  font-size: 1.35rem;
+  color: #003C71;
+  border-left: 6px solid #F2B600;
+  padding-left: 12px;
+}
+
+/* Grid of skill cards */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background: #c3b1e1;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 60, 113, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+}
+
+/* Card title */
+.skill-card h4 {
+  margin: 0 0 10px;
+  color: brown;
+  font-size: 1.05rem;
+}
+
+/* Card list */
+.skill-card ul {
+  margin: 0;
+  padding-left: 18px;
+  line-height: 1.55;
+}
+
+.skill-card li {
+  margin: 6px 0;
+}
+
+/* Make some cards span full width */
+.skill-card.wide {
+  grid-column: 1 / -1;
+}
+
+/* Certification + References panels */
+.info-card {
+  background: #c3b1e1;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.10);
+
+}
+
+
+.info-title {
+  margin: 0 0 6px;
+  font-weight: 700;
+  color: brown;
+}
+
+.info-subtitle {
+  margin: 0;
+}
+
+.muted {
+  color: #666;
+}
+
+
+.muted1 {
+  color: black;
+}
+
+/* =========================
+   Projects Section
+   ========================= */
+
+.projects-grid {
+  max-width: 980px;
+  margin: 10px auto 30px;
+  padding: 0 18px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 60, 113, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+}
+
+.project-card.wide {
+  grid-column: 1 / -1;
+}
+
+.project-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.project-head h4 {
+  margin: 0;
+  color: #1663eb;
+  font-size: 1.05rem;
+}
+
+.project-type {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(242, 182, 0, 0.18);
+  color: #003C71;
+  border: 1px solid rgba(242, 182, 0, 0.45);
+  white-space: nowrap;
+}
+
+.project-desc {
+  margin: 0 0 12px;
+  color: #333;
+  line-height: 1.55;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.tag {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 60, 113, 0.08);
+  color: #003C71;
+  border: 1px solid rgba(0, 60, 113, 0.14);
+}
+
+.project-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
+}
+
+.btn.primary {
+  background: #003C71;
+  color: #fff;
+  border-color: #003C71;
+}
+
+.btn.primary:hover {
+  background: #1663eb;
+  border-color: #1663eb;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: #003C71;
+  border-color: rgba(0, 60, 113, 0.35);
+}
+
+.btn.ghost:hover {
+  border-color: #003C71;
+  background: rgba(0, 60, 113, 0.06);
+}
+
+/* =========================
+   Interests Page
+   ========================= */
+
+.interests-page {
+  background: whitesmoke;
+  /* matches your section background */
+  width: 100%;
+  flex-basis: 100%;
+}
+
+.interests-hero {
+  max-width: 980px;
+  margin: 22px auto 0;
+  padding: 18px 18px 0;
+  text-align: center;
+}
+
+.interests-hero h2 {
+  margin: 10px 0 6px;
+  color: #003C71;
+  font-size: 2rem;
+}
+
+.interests-hero p {
+  margin: 0 auto;
+  max-width: 680px;
+  color: #444;
+  line-height: 1.55;
+}
+
+/* Grid layout for interests cards */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+/* Card style consistent with your project cards */
+.interest-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px 18px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 60, 113, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.interest-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+}
+
+.interest-title {
+  margin: 0 0 12px;
+  color: #1663eb;
+}
+
+/* Image frame */
+.interest-media {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 3px solid rgba(255, 203, 5, 0.55);
+  /* gold accent */
+  background: #f7f7f7;
+  margin-bottom: 12px;
+}
+
+.interest-media img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.interest-card:hover .interest-media img {
+  transform: scale(1.03);
+}
+
+/* Posters look better slightly taller */
+.interest-media.poster img {
+  height: 390px;
+  object-fit: cover;
+}
+
+.interest-desc {
+  margin: 0 0 14px;
+  color: #333;
+  line-height: 1.55;
+}
+
+.interest-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-secondary {
+  background-color: #f29b1c;
+  color: #00274c;
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #c62b28;
+  color: #fff;
+}
+
+footer {
+  background-color: #00274c;
+  border-bottom: black 5px solid;
+  border-top: #ffcb05 5px solid;
+  border-left: #ffcb05 5px solid;
+  border-right: #ffcb05 5px solid;
+  padding: 0;
+  margin-top: auto;
+  color: white;
+  text-align: center;
+}
+
+#down {
+  color: white;
+}
+
+#down1 {
+  color: #ffcb05;
+}
+
+#down1:hover {
+  color: white;
+}
+
+#down12 {
+  color: brown;
+}
+
+#down12:hover {
+  color: black;
+}
+
+/* =========================
+   Mobile & Tablet (≤ 768px)
+   Complete site responsiveness
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* -------------------------
+     Global / Layout
+  ------------------------- */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  main {
+    display: block;
+    /* stops flex layout issues on small screens */
+  }
+
+  section,
+  #new {
+    flex-basis: 100%;
+  }
+
+  #new {
+    min-height: 50vh;
+  }
+
+  .interests-page {
+    flex-basis: 100%;
+    width: 100%;
+    padding: 11px;
+  }
+
+  /* -------------------------
+     Header + Branding + Nav
+  ------------------------- */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 12px;
+  }
+
+  .topmenu {
+    width: 100%;
+    align-items: center;
+    gap: 12px;
+  }
+
+  header #logo {
+    width: 80px;
+    height: 80px;
+    margin-right: 0;
+  }
+
+  header #branding h1 {
+    font-size: 22px;
+    line-height: 1.1;
+  }
+
+  header #branding h3 {
+    font-size: 13px;
+    line-height: 1.2;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  /* Menu becomes horizontal wrap (best for mobile) */
+  .menu {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 14px 0 8px 0;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .menu a {
+    font-size: 14px;
+    padding-bottom: 4px;
+  }
+
+  /* -------------------------
+     Slideshow
+  ------------------------- */
+  .slideshow {
+    height: 300px;
+    /* reduce from 750px */
+    width: 100vw;
+  }
+
+  .slide {
+    position: relative;
+    height: 80%;
+    display: block;
+  }
+
+  .slide img {
+    object-fit: contain;
+  }
+
+  /* Arrows + pause */
+  .arrow {
+    font-size: 42px;
+    padding: 6px 12px;
+  }
+
+  .arrow-left,
+  .arrow-right {
+    top: 40%;
+  }
+
+  .pause-btn {
+    top: 14px;
+    left: 12px;
+    transform: none;
+    font-size: 22px;
+    padding: 8px 12px;
+  }
+
+  /* Caption becomes auto-height so long text never overflows */
+  .caption {
+    left: 10px;
+    right: 10px;
+    width: 96%;
+    bottom: 10px;
+    padding: 8px;
+    height: auto;
+    /* IMPORTANT */
+
+    margin-bottom: -65px;
+    /* prevents weird overlap */
+    font-size: 12px;
+    border-radius: 12px;
+  }
+
+  .cap-title {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  .cap-text {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .cap-note {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .caption .cap-link {
+    font-size: 14px;
+    padding: 9px 12px;
+    border-radius: 10px;
+  }
+
+  /* -------------------------
+     Newsletter banner text
+  ------------------------- */
+  .container {
+    width: 94%;
+    font-size: 16px;
+  }
+
+  #newsletter {
+    padding: 12px;
+    padding-bottom: 10px;
+  }
+
+  .btn-secondary {
+    padding-top: 12px;
+  }
+
+  .muted1 {
+    text-align: center;
+  }
+
+  /* -------------------------
+     Cards / Sections spacing
+     (Skills, Projects, Interests, Certs)
+  ------------------------- */
+  .profile-sections,
+  .projects-grid,
+  .interests-hero {
+    padding: 0 15px;
+  }
+
+  .section-heading {
+    font-size: 1.25rem;
+    margin: 0 0 12px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    border-left: none;
+    font-weight: 800;
+    text-align: center;
+  }
+
+  /* Convert all grids to single column */
+  .skills-grid,
+  .projects-grid,
+  .interests-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding-bottom: 15px;
+  }
+
+  .skill-card.wide,
+  .project-card.wide {
+    grid-column: auto;
+  }
+
+  /* Card typography cleanup */
+  .skill-card h4,
+  .project-head h4,
+  .interest-title {
+    font-size: 1rem;
+  }
+
+  .project-desc,
+  .interest-desc,
+  .skill-card li {
+    font-size: 0.95rem;
+  }
+
+  /* -------------------------
+     Interests page tweaks
+  ------------------------- */
+  .interests-hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .interests-hero p {
+    font-size: 0.95rem;
+    padding: 0 6px;
+  }
+
+  .interest-media img {
+    height: 210px;
+  }
+
+  .interest-media.poster img {
+    height: 300px;
+  }
+
+  /* -------------------------
+     Buttons: full-width for easy tapping
+  ------------------------- */
+  .project-actions,
+  .interest-actions {
+    gap: 8px;
+  }
+
+  .btn,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* -------------------------
+     Footer
+  ------------------------- */
+  footer {
+    padding: 10px 8px;
+  }
+
+  footer h2 {
+    font-size: 18px;
+  }
+
+  footer img {
+    width: 32px;
+    height: 32px;
+  }
+}

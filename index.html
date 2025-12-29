@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<link rel="icon" type="image/png" href="images/dp.jpg" />
+	<link rel="stylesheet" type="text/css" href="styles/style.css" />
+	<title>Lukman's Bio | Web Projects</title>
+</head>
+
+<body>
+	<header>
+		<div class="topmenu">
+			<img id="logo" width="180" height="180" src="images/dp.jpg" />
+			<span id="branding">
+				<h1>Lukman's Bio</h1>
+				<h3>
+					<i>
+						Full Stack Developer (Frontend + Backend) | Web Technologist
+					</i>
+				</h3>
+			</span>
+		</div>
+		<nav>
+			<ul class="menu">
+				<li class="list1"><a href="index.html"> Web Projects </a></li>
+				<li class="list1"><a href="other.html">Other Projects</a></li>
+				<li class="list1"><a href="interest.html">Interests</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section>
+			<div class="slideshow">
+				<!-- LEFT ARROW -->
+				<div class="arrow arrow-left" onclick="prevSlide()">&#10094;</div>
+
+				<!-- RIGHT ARROW -->
+				<div class="arrow arrow-right" onclick="nextSlide()">&#10095;</div>
+
+				<!-- PAUSE / PLAY BUTTON -->
+				<div class="pause-btn" onclick="togglePause()">⏸</div>
+
+				<div class="slide">
+					<img src="images/Home-page-A-square-edu.jpeg" alt="A-Square Edu Consult — Home Page UI" />
+					<div class="caption">
+						<span class="cap-title">A-Square Edu Consult — Home Page UI</span><br>
+						<span class="cap-text">Explore the landing page design for my Multilingual Math Tutoring
+							Platform.</span><br>
+						<a class="cap-link"
+							href="https://multilingualmathstutoringproject.lukman-asquarewebdesigns.com/index.php"
+							target="_blank" rel="noopener noreferrer">
+							Visit Live Page
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/A-Square_Edu_Consult.jpeg" alt="A-Square Edu Consult — Login Page UI" />
+					<div class="caption">
+						<span class="cap-title">A-Square Edu Consult — Login Page UI</span><br>
+						<span class="cap-text">A clean, user-friendly login experience for students,
+							tutors and admins.</span><br>
+						<a class="cap-link"
+							href="https://multilingualmathstutoringproject.lukman-asquarewebdesigns.com/login.php"
+							target="_blank" rel="noopener noreferrer">
+							View Login Page
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/CIS 525 Project-Registration Login.png"
+						alt="Course Registration Project — Student Login UI" />
+					<div class="caption">
+						<span class="cap-title">Course Registration Project — Student Login UI</span><br>
+						<span class="cap-text">CIS 525 project: student authentication interface and layout
+							design.</span><br>
+						<a class="cap-link"
+							href="https://courseregistrationproject.lukman-asquarewebdesigns.com/login.php"
+							target="_blank" rel="noopener noreferrer">
+							View Live Page
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/Message-A-Square-Edu.png" alt="A-Square Edu Consult — Tutor Profiles" />
+					<div class="caption">
+						<span class="cap-title">A-Square Edu Consult — Tutor Profiles & Search</span><br>
+						<span class="cap-text">Browse tutor profiles and connect with the right tutor for your learning
+							needs.</span><br>
+						<a class="cap-link"
+							href="https://multilingualmathstutoringproject.lukman-asquarewebdesigns.com/profiles.php"
+							target="_blank" rel="noopener noreferrer">
+							View Tutor Profiles
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/Search-Language.png" alt="A-Square Edu Consult — Search by Language UI" />
+					<div class="caption">
+						<span class="cap-title">Search Tutors by Language</span><br>
+						<span class="cap-text">UI design that helps learners filter tutors based on preferred
+							language.</span><br>
+						<a class="cap-link"
+							href="https://multilingualmathstutoringproject.lukman-asquarewebdesigns.com/language.php"
+							target="_blank" rel="noopener noreferrer">
+							Try the Language Search
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/A-Square_Cuisine.png" alt="A-Square Cuisine — Menu UI" />
+					<div class="caption">
+						<span class="cap-title">A-Square Cuisine — Menu Design</span><br>
+						<span class="cap-text">Responsive food menu UI with clear categories and visual
+							hierarchy.</span><br>
+						<a class="cap-link" href="https://lukmanasquare.github.io/asquarecuisine05/menu.html"
+							target="_blank" rel="noopener noreferrer">
+							View Menu Page
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/Memory_Game.png" alt="Memory Game — Interactive UI" />
+					<div class="caption">
+						<span class="cap-title">Memory Game — Interactive UI</span><br>
+						<span class="cap-text">A fun leisure project demonstrating interactive JavaScript game
+							logic.</span><br>
+						<a class="cap-link" href="https://lukmanasquare.github.io/Memory-Game/index.html"
+							target="_blank" rel="noopener noreferrer">
+							Play the Game
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/Teacher-reg-UI.jpeg" alt="A-Square Edu Consult — Tutor Registration UI" />
+					<div class="caption">
+						<span class="cap-title">Tutor Registration — A-Square Edu Consult</span><br>
+						<span class="cap-text">Registration UI for multilingual tutors to onboard and create
+							profiles.</span><br>
+						<a class="cap-link"
+							href="https://multilingualmathstutoringproject.lukman-asquarewebdesigns.com/teacher-regform.php"
+							target="_blank" rel="noopener noreferrer">
+							View Registration Page
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/Rules-Memory Game.png" alt="Memory Game — Rules Page" />
+					<div class="caption">
+						<span class="cap-title">Memory Game — Rules & How to Play</span><br>
+						<span class="cap-text">Clear game instructions and gameplay guidelines for new users.</span><br>
+						<a class="cap-link" href="https://lukmanasquare.github.io/Memory-Game/index.html"
+							target="_blank" rel="noopener noreferrer">
+							Open Game & Rules
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/A-Square Cuisine-About Us.png" alt="A-Square Cuisine — About & Contact UI" />
+					<div class="caption">
+						<span class="cap-title">A-Square Cuisine — About & Contact</span><br>
+						<span class="cap-text">Project story, brand message, and contact interface design.</span><br>
+						<a class="cap-link" href="https://lukmanasquare.github.io/asquarecuisine05/about.html"
+							target="_blank" rel="noopener noreferrer">
+							View About Page
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/Designer-Memory-Game.png" alt="Meet the Designer — UI Page" />
+					<div class="caption">
+						<span class="cap-title">Meet the Designer — UI</span><br>
+						<span class="cap-text">A profile-style page introducing the creator of the
+							project.</span><br>
+						<a class="cap-link" href="https://lukmanasquare.github.io/Memory-Game/designer.html"
+							target="_blank" rel="noopener noreferrer">
+							View Designer Page
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/job_search.png" alt="Collaboration / Contact" />
+					<div class="caption">
+						<span class="cap-title">Open to New Opportunities (Dec 2025)</span><br>
+						<span class="cap-text">Have an idea or project to build? Let’s collaborate.</span><br>
+						<a class="cap-link" href="contact.html" target="_blank" rel="noopener noreferrer">
+							Contact Lukman
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/teacher-profile.png" alt="A-Square Edu Consult — Tutor Profile UI" />
+					<div class="caption">
+						<span class="cap-title">Tutor Profile Page — A-Square Edu Consult</span><br>
+						<span class="cap-text">Detailed tutor profile layout with profile details and learning
+							focus.</span><br>
+						<a class="cap-link"
+							href="https://multilingualmathstutoringproject.lukman-asquarewebdesigns.com/teacher-profile.php?id=2"
+							target="_blank" rel="noopener noreferrer">
+							View Tutor Profile
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/Admin-dashboard.jpeg" alt="A-Square Edu Consult — Admin Dashboard UI" />
+					<div class="caption">
+						<span class="cap-title">Admin Dashboard — A-Square Edu Consult</span><br>
+						<span class="cap-text">Administrative UI for managing platform activity and
+							operations.</span><br>
+						<span class="cap-note">Note: You have to log in as an <b>Admin</b> to view this
+							design.</span><br>
+						<a class="cap-link"
+							href="https://multilingualmathstutoringproject.lukman-asquarewebdesigns.com/admin.php"
+							target="_blank" rel="noopener noreferrer">
+							View Admin Dashboard
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/Registration_Project.png"
+						alt="Course Registration Project — Student Registration UI" />
+					<div class="caption">
+						<span class="cap-title">Course Registration Project — Student Registration UI</span><br>
+						<span class="cap-text">A registration interface designed for a smooth project demonstration
+							workflow.</span><br>
+						<a class="cap-link"
+							href="https://courseregistrationproject.lukman-asquarewebdesigns.com/index.php"
+							target="_blank" rel="noopener noreferrer">
+							View Registration Page
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/student-booking-layout.jpeg" alt="A-Square Edu Consult — Booking Module UI" />
+					<div class="caption">
+						<span class="cap-title">Booking Module — Student View</span><br>
+						<span class="cap-text">Schedule sessions with tutors using the booking interface.</span><br>
+						<span class="cap-note">Note: Please register and log in as a <b>student</b> to access this
+							feature.</span><br>
+						<a class="cap-link"
+							href="https://multilingualmathstutoringproject.lukman-asquarewebdesigns.com/login.php"
+							target="_blank" rel="noopener noreferrer">
+							Open Login Page
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/Messaging-UI.jpeg" alt="A-Square Edu Consult — Messaging Module UI" />
+					<div class="caption">
+						<span class="cap-title">Messaging Module — Student & Tutor View</span><br>
+						<span class="cap-text">Secure messaging layout for communication between students and
+							tutors.</span><br>
+						<span class="cap-note">Note: Please log in as a <b>student</b> or <b>tutor</b> to view the
+							messaging module.</span><br>
+						<a class="cap-link"
+							href="https://multilingualmathstutoringproject.lukman-asquarewebdesigns.com/login.php"
+							target="_blank" rel="noopener noreferrer">
+							Open Login Page
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/Settings-Memory-Game.png" alt="Memory Game — Settings UI" />
+					<div class="caption">
+						<span class="cap-title">Memory Game — Settings</span><br>
+						<span class="cap-text">Customize gameplay from 8 to 48 cards and adjust difficulty
+							level.</span><br>
+						<a class="cap-link" href="https://lukmanasquare.github.io/Memory-Game/index.html"
+							target="_blank" rel="noopener noreferrer">
+							Open Game Settings & Play
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/job_search.png" alt="Collaboration / Contact" />
+					<div class="caption">
+						<span class="cap-title">Open to New Opportunities (Dec 2025)</span><br>
+						<span class="cap-text">Let’s build a new idea, solution, or product together.</span><br>
+						<a class="cap-link" href="contact.html" target="_blank" rel="noopener noreferrer">
+							Contact Lukman
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/My-Tutor-Profile.png" alt="A-Square Edu Consult — My Tutor Profile" />
+					<div class="caption">
+						<span class="cap-title">My Tutor Profile — A-Square Edu Consult</span><br>
+						<span class="cap-text">A sample tutor profile showcasing layout, details, and
+							presentation.</span><br>
+						<a class="cap-link"
+							href="https://multilingualmathstutoringproject.lukman-asquarewebdesigns.com/teacher-profile.php?id=7"
+							target="_blank" rel="noopener noreferrer">
+							View My Tutor Profile
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/My Interests.png" alt="Interests Page" />
+					<div class="caption">
+						<span class="cap-title">Interests</span><br>
+						<span class="cap-text">A quick view of what I enjoy outside work — sports, movies, and personal
+							inspiration.</span><br>
+						<a class="cap-link" href="interest.html" target="_blank" rel="noopener noreferrer">
+							View My Interests
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/CIS 525 Project-Registration Login.png"
+						alt="Course Registration Project — Student Login UI" />
+					<div class="caption">
+						<span class="cap-title">Course Registration Project — Student Login UI</span><br>
+						<span class="cap-text">CIS 525 project UI design for authentication and access
+							control.</span><br>
+						<a class="cap-link"
+							href="https://courseregistrationproject.lukman-asquarewebdesigns.com/login.php"
+							target="_blank" rel="noopener noreferrer">
+							View Live Page
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/teacher-booking-dashboard.jpeg"
+						alt="A-Square Edu Consult — Teacher Booking Dashboard UI" />
+					<div class="caption">
+						<span class="cap-title">Teacher Booking Dashboard</span><br>
+						<span class="cap-text">Tutor dashboard view for reviewing bookings and managing session
+							schedules.</span><br>
+						<span class="cap-note">Note: Please log in as a <b>tutor</b> to access this
+							dashboard.</span><br>
+						<a class="cap-link"
+							href="https://multilingualmathstutoringproject.lukman-asquarewebdesigns.com/login.php"
+							target="_blank" rel="noopener noreferrer">
+							Open Login Page
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/teacher-availability.jpeg" alt="A-Square Edu Consult — Teacher Availability UI" />
+					<div class="caption">
+						<span class="cap-title">Teacher Availability Management</span><br>
+						<span class="cap-text">Availability UI for tutors to set weekly schedules and manage time
+							slots.</span><br>
+						<span class="cap-note">Note: Please log in as a <b>tutor</b> to manage availability.</span><br>
+						<a class="cap-link"
+							href="https://multilingualmathstutoringproject.lukman-asquarewebdesigns.com/login.php"
+							target="_blank" rel="noopener noreferrer">
+							Open Login Page
+						</a>
+					</div>
+				</div>
+
+				<div class="slide">
+					<img src="images/Other Projects.png" alt="Other Projects" />
+					<div class="caption">
+						<span class="cap-title">Other Projects</span><br>
+						<span class="cap-text">Explore my additional projects across web development and data
+							science.</span><br>
+						<a class="cap-link" href="other.html" target="_blank" rel="noopener noreferrer">
+							View Other Projects
+						</a>
+					</div>
+				</div>
+			</div>
+			<div id="newsletter">
+				<div class="container">
+					<p>
+						<i>
+							My projects highlight my growth, creativity, and commitment to
+							continuous learning.....</i>
+					</p>
+				</div>
+			</div>
+
+			<!-- ========================= -->
+			<!-- Skills / Cert / References -->
+			<!-- ========================= -->
+
+			<div class="profile-sections">
+				<h3 class="section-heading">Web Development Skills</h3>
+				<div class="skills-grid">
+					<div class="skill-card">
+						<h4>Frontend Development</h4>
+						<ul>
+							<li>HTML5</li>
+							<li>CSS3</li>
+							<li>JavaScript (Vue.js, React, Angular)</li>
+						</ul>
+					</div>
+
+					<div class="skill-card">
+						<h4>Backend Development</h4>
+						<ul>
+							<li>Python (Flask, Django)</li>
+							<li>PHP</li>
+							<li>Node.js</li>
+						</ul>
+					</div>
+
+					<div class="skill-card">
+						<h4>Programming &amp; Databases</h4>
+						<ul>
+							<li>SQL, Python, R, SAS</li>
+							<li>Oracle, MySQL</li>
+							<li>MongoDB, PostgreSQL</li>
+						</ul>
+					</div>
+
+					<div class="skill-card">
+						<h4>Cloud Platforms for Analytics</h4>
+						<ul>
+							<li>Azure (Data Factory, Synapse)</li>
+							<li>AWS (S3, Redshift, QuickSight)</li>
+							<li>AWS Elastic Beanstalk, AWS EC2 Instance</li>
+							<li>Google Cloud Platform (BigQuery, Data Studio)</li>
+						</ul>
+					</div>
+
+					<div class="skill-card">
+						<h4>Version Control &amp; Collaboration</h4>
+						<ul>
+							<li>GitHub, Git</li>
+							<li>Zoom, Google Drive, Google Meet</li>
+							<li>MS365 (SharePoint, Teams)</li>
+							<li>Microsoft Office Suite (Excel, Word, PowerPoint)</li>
+						</ul>
+					</div>
+
+					<div class="skill-card">
+						<h4>Web Services &amp; APIs</h4>
+						<ul>
+							<li>RESTful APIs</li>
+							<li>JSON, XML</li>
+							<li>API integration</li>
+						</ul>
+					</div>
+				</div>
+
+
+				<h3 class="section-heading">Certifications</h3>
+				<div class="info-card">
+					<p class="info-title">
+						OL_19SMC01 Cultivating a Culture of Respect.
+					</p>
+
+					<p class="info-subtitle">
+						Online Certification, University of Michigan
+						<span class="muted">(February 2025) - </span>
+						<a class="btn-secondary"
+							href="https://www.linkedin.com/posts/lukman-adeyemi0512_im-happy-to-share-that-ive-obtained-a-new-activity-7294485152158683136-5M0_?utm_source=share&utm_medium=member_desktop&rcm=ACoAACPsYtIBvrus_4CaqolULUxql8zHma_30jU"
+							target="_blank" rel="noopener noreferrer">
+							View Certificate
+						</a>
+					</p>
+					<br />
+
+					<p class="info-title">
+						DCE101 Cybersecurity and Data Protection at U-M.
+					</p>
+					<p class="info-title">
+						Dearborn FERPA & Data Security Training.
+					</p>
+					<p class="info-subtitle">
+						Online Certifications, University of Michigan
+						<span class="muted">(June 2025) - </span>
+						<a class="btn-secondary"
+							href="https://www.linkedin.com/posts/lukman-adeyemi0512_im-happy-to-share-that-ive-obtained-two-activity-7338641392535007236-1EuT?utm_source=share&utm_medium=member_desktop&rcm=ACoAACPsYtIBvrus_4CaqolULUxql8zHma_30jU"
+							target="_blank" rel="noopener noreferrer">
+							View Certificates
+						</a>
+					</p>
+				</div>
+
+				<h3 class="section-heading">References</h3>
+				<div class="info-card">
+					<p class="muted1">Available upon request.</p>
+				</div>
+			</div>
+		</section>
+	</main>
+	<footer>
+		<div>
+			<h2>Follow Me On Social Media</h2>
+			<a href="https://www.facebook.com/lukmanadeyemi93" target="blank_"><img src="images/facebook.png"
+					title="Facebook" alt="Facebook" width="35" height="35" /></a>
+			<a href="https://www.instagram.com/iam_asquare/" target="blank_"><img src="images/instag.jpg"
+					title="Instagram" alt="Instagram" width="35" height="35" /></a>
+			<a href="https://x.com/lukmanadeyemi" target="blank_"><img src="images/twitter2.jpg" title="X" alt="X"
+					width="35" height="35" /></a>
+
+			<p>Contact - <a id="down1" href="contact.html">Lukman Adeyemi</a></p>
+			<p>A-Square Design, Copyright &copy; 2025</p>
+		</div>
+	</footer>
+	<script src="show.js" defer></script>
+</body>
+
+</html>
